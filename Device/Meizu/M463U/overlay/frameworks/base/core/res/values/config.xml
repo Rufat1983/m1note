@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <integer name="config_deskDockKeepsScreenOn">0</integer>
+    <integer name="config_carDockKeepsScreenOn">1</integer>
+
+    <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
+    <bool name="config_unplugTurnsOnScreen">true</bool>
+
+    <bool name="config_animateScreenLights">false</bool>
+
+    <!-- Flag indicating whether we should enable the automatic brightness in Settings.
+         config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
+    <bool name="config_automatic_brightness_available">true</bool>
+
+    <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
+        The N entries of this array define N + 1 zones as follows:
+        Zone 0: 0 <= LUX < array[0]
+        Zone 1: array[0] <= LUX < array[1]
+        ...
+        Zone N: array[N - 1] <= LUX < array[N]
+        Zone N + 1: array[N] <= LUX < infinity
+        Must be overridden in platform specific overlays
+    -->
+    <integer-array name="config_autoBrightnessLevels">
+        <item>2</item>
+        <item>16</item>
+        <item>28</item>
+        <item>60</item>
+        <item>85</item>
+        <item>110</item>
+        <item>150</item>
+        <item>260</item>
+        <item>380</item>
+        <item>500</item>
+        <item>700</item>
+        <item>900</item>
+        <item>1300</item>
+        <item>2000</item>
+        <item>4000</item>
+        <item>6000</item>
+        <item>8000</item>
+        <item>10000</item>
+        <item>13000</item>
+        <item>16000</item>
+        <item>20000</item>
+        <item>24000</item>
+        <item>28000</item>
+        <item>34000</item>
+    </integer-array>
+    <integer-array name="config_autoBrightnessBlackLevels">
+        <item>1</item>
+        <item>8</item>
+        <item>12</item>
+        <item>24</item>
+        <item>40</item>
+        <item>70</item>
+        <item>100</item>
+        <item>150</item>
+        <item>260</item>
+        <item>400</item>
+        <item>680</item>
+        <item>800</item>
+        <item>1000</item>
+        <item>1200</item>
+        <item>1500</item>
+        <item>1800</item>
+        <item>2100</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+        <item>6000</item>
+        <item>9000</item>
+        <item>12000</item>
+    </integer-array>
+    <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>100</item>
+        <item>110</item>
+        <item>120</item>
+        <item>130</item>
+        <item>140</item>
+        <item>140</item>
+        <item>160</item>
+        <item>180</item>
+        <item>180</item>
+        <item>180</item>
+        <item>190</item>
+        <item>190</item>
+        <item>195</item>
+        <item>200</item>
+        <item>205</item>
+        <item>210</item>
+        <item>215</item>
+        <item>220</item>
+        <item>225</item>
+        <item>230</item>
+        <item>235</item>
+        <item>240</item>
+        <item>245</item>
+        <item>250</item>
+        <item>255</item>
+    </integer-array>
+    <integer-array name="config_autoBrightnessLcdBacklightBlackValues">
+        <item>100</item>
+        <item>110</item>
+        <item>120</item>
+        <item>140</item>
+        <item>145</item>
+        <item>145</item>
+        <item>160</item>
+        <item>160</item>
+        <item>180</item>
+        <item>180</item>
+        <item>190</item>
+        <item>200</item>
+        <item>210</item>
+        <item>210</item>
+        <item>220</item>
+        <item>220</item>
+        <item>220</item>
+        <item>220</item>
+        <item>225</item>
+        <item>230</item>
+        <item>235</item>
+        <item>240</item>
+        <item>245</item>
+        <item>250</item>
+        <item>255</item>
+    </integer-array>
+    <integer-array name="config_autoDaltaBrightness">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>90</item>
+        <item>100</item>
+        <item>110</item>
+        <item>120</item>
+        <item>150</item>
+        <item>175</item>
+        <item>200</item>
+        <item>240</item>
+    </integer-array>
+    <integer-array name="config_autoDaltaBrightnessDurations">
+        <item>5500</item>
+        <item>5000</item>
+        <item>4800</item>
+        <item>4400</item>
+        <item>4000</item>
+        <item>3880</item>
+        <item>2860</item>
+        <item>2440</item>
+        <item>1220</item>
+        <item>1200</item>
+        <item>1124</item>
+        <item>1100</item>
+        <item>1084</item>
+        <item>1064</item>
+        <item>1043</item>
+        <item>1022</item>
+        <item>1000</item>
+    </integer-array>
+    <array name="config_autoBrightnessButtonBacklightValues" />
+    <array name="config_autoBrightnessKeyboardBacklightValues" />
+
+    <!-- Minimum screen brightness allowed by the power manager. -->
+    <integer name="config_screenBrightnessDim">10</integer>
+
+   <string-array name="config_tether_usb_regexs">
+        <item>rndis\\d</item>
+    </string-array>
+
+    <!-- List of regexpressions describing the interface (if any) that represent tetherable
+         Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
+         should be empty.  An example would be "softap.*" -->
+    <string-array name="config_tether_wifi_regexs">
+        <item>ap\\d</item>
+    </string-array>
+
+    <!-- List of regexpressions describing the interface (if any) that represent tetherable
+         bluetooth interfaces.  If the device doesn't want to support tethering over bluetooth this
+         should be empty. -->
+    <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
+    <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
+
+    <!-- Boolean indicating whether the wifi chipset has p2p support -->
+    <bool translatable="false" name="config_wifi_p2p_support">true</bool>
+
+    <!-- Boolean indicating whether the wifi chipset has background scan support -->
+    <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
+
+    <integer-array name="config_tether_upstream_types">
+        <item>0</item>
+        <item>1</item>
+        <item>5</item>
+        <item>7</item>
+        <item>9</item>
+    </integer-array>
+
+    <bool name="config_ui_enableFadingMarquee">false</bool>
+
+    <!-- Vibrator pattern for feedback about a long screen/key press -->
+    <integer-array name="config_longPressVibePattern">
+        <item>0</item>
+        <item>1</item>
+        <item>20</item>
+        <item>21</item>
+    </integer-array>
+
+    <!-- Vibrator pattern for feedback about touching a virtual key -->
+    <integer-array name="config_virtualKeyVibePattern">
+        <item>0</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+    </integer-array>
+
+    <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
+    <integer-array name="config_keyboardTapVibePattern">
+        <item>40</item>
+    </integer-array>
+
+    <!-- Vibrator pattern for feedback about booting with safe mode disabled -->
+    <integer-array name="config_safeModeDisabledVibePattern">
+        <item>0</item>
+        <item>1</item>
+        <item>20</item>
+        <item>21</item>
+    </integer-array>
+
+    <!-- Vibrator pattern for feedback about booting with safe mode disabled -->
+    <integer-array name="config_safeModeEnabledVibePattern">
+        <item>0</item>
+        <item>1</item>
+        <item>20</item>
+        <item>21</item>
+        <item>500</item>
+        <item>600</item>
+    </integer-array>
+
+    <!-- Vibrator pattern for feedback about hitting a scroll barrier -->
+    <integer-array name="config_scrollBarrierVibePattern">
+        <item>0</item>
+        <item>15</item>
+        <item>10</item>
+        <item>10</item>
+    </integer-array>
+
+    <string-array name="networkAttributes">
+        <item>wifi,1,1,1,-1,true</item>
+        <item>mobile,0,0,0,-1,true</item>
+        <item>mobile_mms,2,0,2,300000,true</item>
+        <item>mobile_supl,3,0,2,300000,true</item>
+        <item>mobile_dun,4,0,3,300000,true</item>
+        <item>mobile_hipri,5,0,3,300000,true</item>
+        <item>mobile_fota,10,0,2,300000,true</item>
+        <item>mobile_ims,11,0,2,300000,true</item>
+        <item>mobile_cbs,12,0,2,300000,true</item>
+        <item>pppoe,20,20,1,-1,true</item>
+        <item>mobile_dm,34,0,3,300000,true</item>
+        <item>mobile_wap,35,0,3,300000,true</item>
+        <item>mobile_net,36,0,3,300000,true</item>
+        <item>mobile_cmmail,37,0,3,300000,true</item>
+        <item>mobile_rcse,38,0,3,300000,true</item>
+        <item>usb,40,40,0,-1,true</item>
+        <item>mobile_ia,14,0,2,-1,true</item>
+        <item>bluetooth,7,7,0,-1,true</item>
+        <item>csd,41,41,3,-1,true</item>
+        <item>mobile_emergency,42,0,2,300000,true</item>
+    </string-array>
+
+    <string-array name="radioAttributes">
+        <item>1,1</item>
+        <item>0,1</item>
+        <item>7,1</item>
+        <item>20,1</item>
+        <item>40,1</item>
+        <item>41,1</item>
+    </string-array>
+
+    <integer-array name="config_tether_upstream_types">
+        <item>0</item>
+        <item>1</item>
+        <item>5</item>
+        <item>7</item>
+        <item>9</item>
+    </integer-array>
+
+    <!-- Integer indicating wpa_supplicant scan interval in milliseconds -->
+    <integer translatable="false" name="config_wifi_supplicant_scan_interval">120000</integer>
+
+    <integer name="config_lightSensorWarmupTime">500</integer>
+
+    <integer name="config_virtualKeyQuietTimeMillis">250</integer>
+
+    <!-- Package name providing network location support. -->
+    <string name="config_networkLocationProviderPackageName" translatable="false">com.google.android.location</string>
+
+    <!-- Package name providing geocoder API support. -->
+    <string name="config_geocodeProviderPackageName" translatable="false">com.google.android.location</string>
+
+    <integer name="config_criticalBatteryWarningLevel">5</integer>
+
+    <integer name="config_lowBatteryWarningLevel">15</integer>
+
+    <integer name="config_lowBatteryCloseWarningLevel">20</integer>
+
+    <dimen name="config_prefDialogWidth">240dp</dimen>
+
+    <integer name="config_radioScanningTimeout">120000</integer>
+</resources>
